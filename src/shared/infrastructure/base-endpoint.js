@@ -1,4 +1,14 @@
 /**
+
+ * Reusable endpoint client with CRUD operations over a resource collection.
+
+ * @summary Wraps Axios calls for a single endpoint path or absolute URL.
+
+ * @author Nestor Rojas
+
+ */
+
+/**
  * Reusable endpoint client with CRUD operations over a resource collection.
  *
  * @class BaseEndpoint
