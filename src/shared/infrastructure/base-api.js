@@ -1,35 +1,26 @@
 import axios from "axios";
 
-// import {iamInterceptor} from "../../iam/infrastructure/iam.interceptor.js";
-
-const platformApi = import.meta.env.VITE_LEARNING_PLATFORM_API_URL;
+const platformApi = import.meta.env.VITE_GEOMINE_API_URL;
 
 /**
  * Shared infrastructure base class that configures the HTTP client.
- *
+ * @summary Provides a preconfigured Axios instance to every bounded-context API.
+ * @author Nestor Rojas
  * @class BaseApi
  */
 export class BaseApi {
     /**
-     * @private
-     * Axios HTTP client instance
+     * Axios HTTP client instance.
      * @type {import('axios').AxiosInstance}
      */
     #http;
 
-    /**
-     * Initializes the Axios HTTP client with the base URL from environment variables
-     */
+    /** Creates the Axios client using the base URL from environment variables. */
     constructor() {
         this.#http = axios.create({
             baseURL: platformApi,
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
+            headers: { 'Content-Type': 'application/json' },
         });
-        // Add interceptors for request/response if needed
-        // this.#http.interceptors.request.use(iamInterceptor);
     }
 
     /**
@@ -39,5 +30,4 @@ export class BaseApi {
     get http() {
         return this.#http;
     }
-
 }
