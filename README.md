@@ -1,5 +1,49 @@
-# Vue 3 + Vite
+# GeoMine Solutions Machinery & Telemetry Management
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Overview
+GeoMine Solutions Machinery & Telemetry Management is a Vue 3 + Vite application organized with a domain-driven design (DDD) style. The project demonstrates how to model features by bounded context and keep business concepts separated from UI and infrastructure concerns.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+The current implementation actively uses the Publishing context and includes an IAM context that is partially wired at router level.
+
+## Goals
+- Show a practical front-end architecture with DDD-inspired layering.
+- Keep domain concepts explicit (`entity`, `resource`, `assembler`, `store`).
+- Provide a clean learning base for CRUD use cases, localization, and routing.
+
+## Tech Stack
+- Vue 3
+- Vite
+- Pinia
+- Vue Router
+- Vue I18n
+- PrimeVue + PrimeFlex + PrimeIcons
+- Axios
+- `json-server` for local mock API
+
+## Project Structure (DDD-Oriented)
+```text
+src/
+  inspections/                       
+	domain/                    
+	application/               
+	infrastructure/           
+	presentation/              
+
+  section/                  
+	domain/model/              
+	application/               
+	infrastructure/            
+	presentation/              
+
+  shared/                      
+	infrastructure/            
+	presentation/              
+```
+
+## Bounded Contexts
+
+inspection
+section
+shared
+
+Author: Nestor Rojas
